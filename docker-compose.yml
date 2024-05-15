@@ -1,0 +1,19 @@
+version: '3.5'
+
+services:
+
+  yourls:
+    image: yourls:latest
+    restart: always
+    env_file: .env
+    ports:
+      - 6000:80
+    environment:
+      YOURLS_SITE: ${YOURLS_SITE}
+      YOURLS_USER: ${YOURLS_USER}
+      YOURLS_PASS: ${YOURLS_PASS}
+      YOURLS_DB_HOST: ${YOURLS_DB_HOST}
+      YOURLS_DB_USER: ${YOURLS_DB_USER}
+      YOURLS_DB_NAME: ${YOURLS_DB_NAME}
+      YOURLS_DB_PASS: ${YOURLS_DB_PASS}
+      YOURLS_DB_PREFIX: ${YOURLS_DB_PREFIX}
